@@ -65,7 +65,7 @@ namespace ModNamespace {
     [ModInfo("MyModName", "my.mod.guid", "1.0.0")]
     public class MyMod : UniSpliceMod
     {
-        public void Awake()
+        public override void ModAwake()
         {
             UniSpliceLog.Info("My Mod loaded!");
         }
@@ -78,6 +78,8 @@ You can also check out the Example Mod: https://github.com/UniSplice/SampleMod
 Place your compiled `.dll` in the game's `mods/` folder and UniSplice will pick it up on the next launch.
 
 With UniSpliceMod, you can easily use everything a normal Unity MonoBehaviour would, as if the game was built for this.
+
+The only difference is that Mods do not have a `void Awake()`, it's always `override void ModAwake()`.
 
 ---
 
