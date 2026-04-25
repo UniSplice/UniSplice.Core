@@ -97,8 +97,17 @@ namespace UniSplice.Preloader
         {
             AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
             {
-                if (_loadedAssemblies.TryGetValue(args.Name+".dll", out var assembly))
-                    return assembly;
+                var requestedName = new AssemblyName(args.Name).Name;
+                
+                foreach (var asm in _loadedAssemblies.Values)
+                {
+                    if (asm.GetName().Name == requestedName)
+                    {
+                        return asm;
+                    }
+                }
+                
+
                 return null;
             };
         }

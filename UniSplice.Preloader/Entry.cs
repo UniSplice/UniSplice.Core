@@ -29,6 +29,8 @@ namespace UniSplice.Preloader
             // Create Game Folder /sdcard/UniSplice/games/GAME_PACKAGE
             CreateGameFolder();
             
+            AssemblyLoader.LinkResolver();
+            
             LoadModules();
 
             StartOnUnityLoadThread();
