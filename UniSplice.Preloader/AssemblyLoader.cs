@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace UniSplice.Preloader
 {
-    internal static class AssemblyLoader
+    public static class AssemblyLoader
     {
         private static Dictionary<string, Assembly> _loadedAssemblies = new();
 
@@ -88,7 +88,7 @@ namespace UniSplice.Preloader
             return allFiles.Length;
         }
 
-        internal static void AddAssembly(string name, Assembly assembly)
+        public static void AddAssembly(string name, Assembly assembly)
         {
             _loadedAssemblies[name] = assembly;
         }
