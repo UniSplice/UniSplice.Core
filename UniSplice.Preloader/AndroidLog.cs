@@ -2,7 +2,7 @@
 
 namespace UniSplice.Preloader
 {
-    internal static class AndroidLog
+    public static class AndroidLog
     {
         private const int ANDROID_LOG_INFO = 4;
         private const int ANDROID_LOG_ERROR = 6;
